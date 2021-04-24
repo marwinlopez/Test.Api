@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,7 +8,6 @@ using System.Threading.Tasks;
 using Test.Api.Common;
 using Test.Application.Students;
 using Test.Core.Students;
-using Test.Core.StudyHouses;
 using Test.EntityFramework;
 
 namespace Test.Api.Controllers

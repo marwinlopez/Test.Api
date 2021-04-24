@@ -11,7 +11,7 @@ namespace Test.Api.Common
         {
             public bool Success { get; internal set; }
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public int? total_elements { get; internal set; }
+            public int? Total_elements { get; internal set; }
             public int StatusCode { get; internal set; }
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -22,12 +22,12 @@ namespace Test.Api.Common
 
             public ResponseApi(HttpStatusCode statusCode, T item, List<T> items = null)
             {
-                ListObjectResponse = items == null ? null : items;
+                ListObjectResponse = items ?? null;
                 ObjectResponse = item;
                 Success = (statusCode == HttpStatusCode.Accepted || statusCode == HttpStatusCode.OK || statusCode == HttpStatusCode.Created);
                 StatusCode = (int)statusCode;
                 if ((item != null) || (items != null))
-                    total_elements = items == null ? 1 : items.Count;
+                    Total_elements = items == null ? 1 : items.Count;
 
             }
 
